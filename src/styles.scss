@@ -1,1 +1,301 @@
-/* You can add global styles to this file, and also import other style files */
+//Imports
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Comfortaa&display=swap');
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+* {margin:0;padding:0;border:0 none;position: relative; outline: none;
+}
+
+//Colors theme
+$indigo :  #6610f2;
+
+$theme-colors: (
+  "indigo":     $indigo,
+);
+
+//Class
+
+// -- Nav
+
+.navbar {
+  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+}
+
+.bg-indigo {
+    background-color: $indigo;
+}
+
+.text-comfortaa {
+    font-family: 'Comfortaa', cursive;
+}
+
+.text-indigo {
+  color: $indigo;
+}
+
+.img-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+}
+
+.link-page {
+  text-decoration: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+}
+
+.link-page:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -7px;
+  left: 0;
+  background: white;
+  visibility: hidden;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: .25s linear;
+}
+
+.link-page:hover:before,
+.link-page:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
+.btn-logo-home, .btn-logo-toggler {
+  display:block;
+  transition: 1s;
+}
+
+.btn-logo-home:hover, .btn-logo-toggler:hover {
+  animation-name: logohover;
+  animation-duration: 1s;  
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 0.50rem white);
+}
+
+@keyframes logohover {
+  from {bottom: 0px;}
+  to {bottom: 5px;}
+}
+
+.img-world {
+  width: 50px;
+  height: 50px;
+}
+
+.input-idiom {
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  border: solid 3px white;
+  background-color: $indigo;
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  background: url("./assets/img/arrow_select.png") no-repeat right $indigo;
+  background-size: 2rem;
+  font-weight: bold;
+  filter: drop-shadow(0 0 0.20rem rgb(58, 57, 57));
+}
+
+.btn-user {
+  background-color: transparent;
+  border: solid 3px white;
+  border-radius: 100px;
+  padding: 0.60rem;
+  filter: drop-shadow(0 0 0.15rem rgb(58, 57, 57));
+}
+
+.btn-user > img {
+  width: 35px;
+  height: 40px;
+}
+
+/*.btn-user:hover {
+  animation: hover-btnUser 1s;
+  animation-fill-mode: forwards;
+}
+
+.btn-user:focus {
+  animation: focus-btnUser 1s;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0.50rem 0.50rem white);
+}*/
+
+/*@keyframes hover-btnUser {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+
+  }
+}
+
+@keyframes focus-btnUser {
+  0% {
+    bottom: 0px;
+  }
+  25% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: 0px;
+  }
+  75% {
+    bottom: 5px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}*/
+
+//END
+
+//Footer 
+
+.text-comments {
+  font-size: 10px !important;
+  filter: none !important;
+}
+
+.link-footer-facebook {
+  color: #3b5998 !important;
+}
+
+.link-footer-facebook:hover {
+  animation: hover-link-footer-social 0.5s;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 0.50rem #3b5998);
+}
+
+.link-footer-twitter {
+  color: #00ACEE !important;
+}
+
+.link-footer-twitter:hover {
+  animation: hover-link-footer-social 0.5s;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 0.50rem #00ACEE);
+}
+
+.link-footer-instagram {
+  color: #8c249c;
+}
+
+.link-footer-instagram:hover {
+  animation: hover-link-footer-social 0.5s;
+  animation-fill-mode: forwards;
+  color: #8c249c;
+  filter: drop-shadow(0 0 0.50rem #da3f15);
+}
+
+.link-footer-tiktok {
+  color: #000000;
+}
+
+.link-footer-tiktok:hover {
+  color: #000000;
+  animation: hover-link-footer-social 0.5s;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 0.50rem #e20404);
+}
+
+.link-footer-youtube {
+  color: #ff0000;
+}
+
+.link-footer-youtube:hover {
+  color: #ff0000;
+  animation: hover-link-footer-social 0.5s;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 0.50rem #ff0000);
+}
+
+@keyframes hover-link-footer-social {
+  from {bottom: 0px;}
+  to {bottom: 3.5px;}
+}
+
+//Home 
+
+.home {
+  background-color: rgb(203, 206, 206);
+}
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30%;
+  filter: drop-shadow(0 0 0.30rem rgb(58, 57, 57));
+  border-radius: 100px;
+}
+
+.card-body > h1,
+.card-body > p {
+  filter: drop-shadow(0 0 0.15rem rgb(58, 57, 57));
+}
+
+.card-body > p {
+  font-size: 20px;
+}
+
+hr {
+  height: 4px;
+  border-width:0;
+  color:rgb(0, 0, 0);
+  background-color:rgb(0, 0, 0)
+}
+
+.cards-img {
+  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+}
+
+.btn-home-rg {
+  background-color: $indigo;
+  color: white;
+  filter: drop-shadow(0 0 0.20rem rgb(58, 57, 57));
+  transition: 1s;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 30px;
+}
+
+.btn-home-rg:hover {
+  background-color: $indigo;
+  filter: drop-shadow(0 0 0.80rem rgb(58, 57, 57));
+  animation: hover-btn-home-rg 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hover-btn-home-rg {
+  from {bottom: 0px;}
+  to {bottom: 5px;}
+}
+
+
+
+
