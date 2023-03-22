@@ -14,24 +14,25 @@
           <a routerLink="/duo" ngClass="text-white link-page navbar-link px-2"><strong>DUO</strong></a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/aboutus" ngClass="text-white link-page navbar-link px-2"><strong>About
-              Us</strong></a>
+          <a routerLink="/aboutus" ngClass="text-white link-page navbar-link px-2">
+            <strong>{{ 'text-0001' | translate }}</strong>
+          </a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/forum" ngClass="text-white link-page navbar-link px-2"><strong>Forums</strong></a>
+          <a routerLink="/forum" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0002' | translate }}</strong></a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/information" ngClass="text-white link-page navbar-link px-2"><strong>Information</strong></a>
+          <a routerLink="/information" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0003' | translate }}</strong></a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/security" ngClass="text-white link-page navbar-link px-2"><strong>Security</strong></a>
+          <a routerLink="/security" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0004' | translate }}</strong></a>
         </li>
       </div>
     </div>
     <div ngClass="container-fluid px-5">
       <div ngClass="row">
-        <select ngClass="col-5 input-idiom mx-3" (switch)="changeIdiom()">
-          <option id="{{i.id}}" *ngFor="let i of idioms">{{i.text}}</option>
+        <select #idiom ngClass="col-5 input-idiom mx-3" (change)="changeIdiom(idiom.value)">
+          <option id="{{i.id}}" *ngFor="let i of idioms" value="{{i.name}}">{{i.text}}</option>
         </select>
         <a ngClass="col-2 mx-5 btn btn-user">
           <img src="../assets/img/icons/user-btnLog.png">
@@ -52,7 +53,7 @@
     <div ngClass="row">
       <!-- comments section -->
       <div ngClass="container col-12">
-        <h2 ngClass="text-comfortaa text-white py-5 col-6"><strong>Comments</strong></h2>
+        <h2 ngClass="text-comfortaa text-white py-5 col-6"><strong>{{ 'text-0014' | translate }}</strong></h2>
         <div ngClass="row">
           <button (click)="prevComments()" ngClass="btn btn-comments col-1" *ngIf="comments.length != 0 && this.startComments != 0"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
           <div ngClass="col-5" *ngFor="let comment of comments | slice:this.startComments:this.startComments+2; let counts = index;">
@@ -71,28 +72,28 @@
       <div ngClass="container col-6 text-comfortaa text-white">
         <div ngClass="row">
           <div ngClass="col-6 py-5">
-            <h2 ngClass="py-3"><strong>Legacy</strong></h2>
-            <a routerLink="/privacy" ngClass="text-white link-page">Privacy</a>
+            <h2 ngClass="py-3"><strong>{{ 'text-0015' | translate }}</strong></h2>
+            <a routerLink="/privacy" ngClass="text-white link-page">{{ 'text-0016' | translate }}</a>
             <br>
             <br>
-            <a routerLink="/conditions" ngClass="text-white link-page">Conditions</a>
+            <a routerLink="/conditions" ngClass="text-white link-page">{{ 'text-0017' | translate }}</a>
             <br>
             <br>
-            <a routerLink="/policity_cookies" ngClass="text-white link-page">Policity Cookies</a>
+            <a routerLink="/policity_cookies" ngClass="text-white link-page">{{ 'text-0018' | translate }}</a>
           </div>
           <div ngClass="col-6 py-5">
-            <h2 ngClass="py-3"><strong>Work</strong></h2>
-            <a routerLink="/employment" ngClass="text-white link-page">Employment Portal</a>
+            <h2 ngClass="py-3"><strong>{{ 'text-0019' | translate }}</strong></h2>
+            <a routerLink="/employment" ngClass="text-white link-page">{{ 'text-0020' | translate }}</a>
             <br>
             <br>
-            <a routerLink="/techblog" ngClass="text-white link-page">Technology Blog</a>
+            <a routerLink="/techblog" ngClass="text-white link-page">{{ 'text-0021' | translate }}</a>
           </div>
         </div>
       </div>
       <!-- END -->
       <!-- social networks section -->
       <div ngClass="container col-6">
-        <h2 ngClass="text-comfortaa text-white py-5"><strong>Social Networks</strong></h2>
+        <h2 ngClass="text-comfortaa text-white py-5"><strong>{{ 'text-0022' | translate }}</strong></h2>
         <div ngClass="row">
           <div ngClass="col-1"><a ngClass="link-footer-facebook" href="https://facebook.com"><i class="fa-brands fa-facebook fa-bounce fa-2xl" ></i></a></div>
           <div ngClass="col-1"><a ngClass="link-footer-twitter" href="https://twitter.com"><i class="fa-brands fa-twitter fa-bounce fa-2xl"></i></a></div>
@@ -105,6 +106,6 @@
     </div>
   </div>
   <div ngClass="text-white text-comfortaa bg-black col-12 py-3">
-    <p ngClass="text-center">Copyright© 2023 DUO Group</p>
+    <p ngClass="text-center">{{ 'text-0023' | translate }}</p>
   </div>
 </footer>
