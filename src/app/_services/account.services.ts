@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { User } from '../_models';
+import { Game } from '../_models';
+
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -24,8 +26,8 @@ export class AccountService {
         return this.userSubject.value;
     }
 
-    login(username: string, password: string) {
-        return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
+    login(user: User) {
+        return this.http.post<User>(`${environment.apiUrl}/api/users/authenticate`, user)
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));
@@ -42,19 +44,31 @@ export class AccountService {
     }
 
     register(user: User) {
-        return this.http.post(`${environment.apiUrl}/users/register`, user);
+        return this.http.post(`${environment.apiUrl}/api/users/register`, user);
+    }
+
+    getAllGames(): Observable <any> {
+        return this.http.get<Game[]>(`${environment.apiUrl}/api/games`);
+    }
+
+    uploadimg(formdata: FormData): Observable <any> {
+        return this.http.post(`${environment.apiUrl}/api/users/profile/upload`, formdata);
+    }
+
+    createGamesLiked(user: User) {
+        return this.http.post(`${environment.apiUrl}/api/users/gameslikeds`, user);
     }
 
     getAll() {
-        return this.http.get<User[]>(`${environment.apiUrl}/users`);
+        return this.http.get<User[]>(`${environment.apiUrl}/api/users`);
     }
 
     getById(id: string) {
-        return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+        return this.http.get<User>(`${environment.apiUrl}/api/users/${id}`);
     }
 
     update(id: string, params: any) {
-        return this.http.put(`${environment.apiUrl}/users/${id}`, params)
+        return this.http.put(`${environment.apiUrl}/api/users/${id}`, params)
             .pipe(map(x => {
                 // update stored user if the logged in user updated their own record
                 if (id == this.userValue?.id) {
@@ -70,7 +84,7 @@ export class AccountService {
     }
 
     delete(id: string) {
-        return this.http.delete(`${environment.apiUrl}/users/${id}`)
+        return this.http.delete(`${environment.apiUrl}/api/users/${id}`)
             .pipe(map(x => {
                 // auto logout if the logged in user deleted their own record
                 if (id == this.userValue?.id) {

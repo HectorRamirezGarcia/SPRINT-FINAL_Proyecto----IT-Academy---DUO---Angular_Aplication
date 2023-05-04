@@ -22,7 +22,7 @@
 
     "--- footer ----": "",
 
-    "text-0014": "Commentarios",
+    "text-0014": "Comentarios",
     "text-0015": "Legal",
     "text-0016": "Privacidad",
     "text-0017": "Condiciones",
@@ -31,6 +31,55 @@
     "text-0020": "Portal de trabajo",
     "text-0021": "Blog tecnlogico",
     "text-0022": "Redes sociales",
-    "text-0023": "DUO Group© 2023 todos los derechos reservados"
+    "text-0023": "DUO Group© 2023 todos los derechos reservados",
+
+
+    "--- login modal ----": "",
+
+    "text-0024": "Correo electronico",
+    "text-0025": "Contraseña",
+    "text-0026": "ejemplo",
+    "text-0027": "No estas registrado en DUO? ",
+    "text-0028": "Haz click aquí ",
+    "text-0029": "o ingresa con tu correo y contraseña",
+
+    "--- END ---": "",
+
+    "--- _RegisterComponent ---": "",
+
+    "--- placeholder ---": "",
+
+    "text-0030": "Nombre",
+    "text-0031": "Apellidos",
+    "text-0032": "Repite la contraseña",
+    "text-0033": "Telefono",
+    "text-0034": "Fecha de nacimiento",
+    "text-0035": "Contraseña",
+    "text-0036": "Repite contraseña",
+    "text-0037": "Información personal",
+    "text-0038": "Información publica",
+    "text-0039": "Enviar",
+    "text-0040": "Descripción",
+    "text-0041": "Ciudad",
+    "text-0042": "Provincia",
+    "text-0043": "Nombre de usuario",
+    "text-0044": "Selecciona tu/s juego/s",
+
+    "--- Categories ---": "",
+
+    "--- Games ---": "",
+
+    "text-0100": "Shooter",
+    "text-0101": "Acción",
+    "text-0102": "RPG",
+    "text-0103": "Moba",
+    "text-0104": "Simulador",
+    "text-0105": "Arcade",
+    "text-0106": "Estrategia",
+    "text-0107": "Juego musical",
+    "text-0108": "Juego de mesa",
+    "text-0109": "Aventuras",
+    "text-0110": "Deportes"
+
 
 }

@@ -1,52 +1,44 @@
-//Imports
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Comfortaa&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Comfortaa&display=swap");
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
-
-
 *, *:after, *:before {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-* {margin:0;padding:0;border:0 none;position: relative; outline: none;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  position: relative;
+  outline: none;
 }
-
-//Colors theme
-$indigo :  #6610f2;
-
-$theme-colors: (
-  "indigo":     $indigo,
-);
 
 .border-indigo {
-  border-color: $indigo !important;
+  border-color: #6610f2 !important;
 }
 
-//Class
-
-// -- Nav
-
 .navbar {
-  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.5rem rgb(58, 57, 57));
 }
 
 .bg-indigo {
-    background-color: $indigo;
+  background-color: #6610f2;
 }
 
 .text-comfortaa {
-    font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
 
 .text-indigo {
-  color: $indigo;
+  color: #6610f2;
 }
 
 .img-logo {
   width: 70px;
   height: 70px;
   object-fit: contain;
-  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.5rem rgb(58, 57, 57));
   padding: none;
   margin-left: 2rem;
 }
@@ -54,7 +46,7 @@ $theme-colors: (
 .link-page {
   text-decoration: none;
   z-index: 1;
-  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.5rem rgb(58, 57, 57));
 }
 
 .link-page:before {
@@ -68,7 +60,7 @@ $theme-colors: (
   visibility: hidden;
   border-radius: 5px;
   transform: scaleX(0);
-  transition: .25s linear;
+  transition: 0.25s linear;
 }
 
 .link-page:hover:before,
@@ -77,49 +69,51 @@ $theme-colors: (
   transform: scaleX(1);
 }
 
-
 .btn-logo-home, .btn-logo-toggler {
-  display:block;
+  display: block;
   transition: 1s;
 }
 
 .btn-logo-home:hover, .btn-logo-toggler:hover {
   animation-name: logohover;
-  animation-duration: 1s;  
+  animation-duration: 1s;
   animation-fill-mode: forwards;
-  filter: drop-shadow(0 0 0.50rem white);
+  filter: drop-shadow(0 0 0.5rem white);
 }
 
 @keyframes logohover {
-  from {bottom: 0px;}
-  to {bottom: 5px;}
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 5px;
+  }
 }
-
 .img-world {
   width: 50px;
   height: 50px;
 }
 
 .input-idiom {
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-  appearance:none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
   border: solid 3px white;
-  background-color: $indigo;
+  background-color: #6610f2;
   padding: 1rem;
   border-radius: 10px;
   color: white;
-  background: url("./assets/img/arrow_select.png") no-repeat right $indigo;
+  background: url("./assets/img/arrow_select.png") no-repeat right #6610f2;
   background-size: 2rem;
   font-weight: bold;
-  filter: drop-shadow(0 0 0.20rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.2rem rgb(58, 57, 57));
 }
 
 .btn-user {
   background-color: transparent;
   border: solid 3px white;
   border-radius: 100px;
-  padding: 0.60rem;
+  padding: 0.6rem;
   filter: drop-shadow(0 0 0.15rem rgb(58, 57, 57));
 }
 
@@ -133,8 +127,7 @@ $theme-colors: (
 }
 
 .input-group > input {
-  color: $indigo !important;
-
+  color: #6610f2 !important;
 }
 
 .input-group {
@@ -148,13 +141,13 @@ $theme-colors: (
 }
 
 ::placeholder {
-  color: $indigo !important;
+  color: #6610f2 !important;
   opacity: 0.5 !important;
 }
 
 .btn-indigo:hover {
-  color: $indigo !important;
-  border: 1px solid $indigo !important
+  color: #6610f2 !important;
+  border: 1px solid #6610f2 !important;
 }
 
 .text-over-login {
@@ -166,10 +159,6 @@ $theme-colors: (
   height: 8rem;
   filter: drop-shadow(0 0 0.15rem rgb(108, 74, 155));
 }
-
-//END
-
-//Footer 
 
 .text-comments {
   font-size: 10px !important;
@@ -183,7 +172,7 @@ $theme-colors: (
 .link-footer-facebook:hover {
   animation: hover-link-footer-social 0.5s;
   animation-fill-mode: forwards;
-  filter: drop-shadow(0 0 0.50rem #3b5998);
+  filter: drop-shadow(0 0 0.5rem #3b5998);
 }
 
 .link-footer-twitter {
@@ -193,7 +182,7 @@ $theme-colors: (
 .link-footer-twitter:hover {
   animation: hover-link-footer-social 0.5s;
   animation-fill-mode: forwards;
-  filter: drop-shadow(0 0 0.50rem #00ACEE);
+  filter: drop-shadow(0 0 0.5rem #00ACEE);
 }
 
 .link-footer-instagram {
@@ -204,7 +193,7 @@ $theme-colors: (
   animation: hover-link-footer-social 0.5s;
   animation-fill-mode: forwards;
   color: #8c249c;
-  filter: drop-shadow(0 0 0.50rem #da3f15);
+  filter: drop-shadow(0 0 0.5rem #da3f15);
 }
 
 .link-footer-tiktok {
@@ -215,7 +204,7 @@ $theme-colors: (
   color: #000000;
   animation: hover-link-footer-social 0.5s;
   animation-fill-mode: forwards;
-  filter: drop-shadow(0 0 0.50rem #e20404);
+  filter: drop-shadow(0 0 0.5rem #e20404);
 }
 
 .link-footer-youtube {
@@ -226,21 +215,22 @@ $theme-colors: (
   color: #ff0000;
   animation: hover-link-footer-social 0.5s;
   animation-fill-mode: forwards;
-  filter: drop-shadow(0 0 0.50rem #ff0000);
+  filter: drop-shadow(0 0 0.5rem #ff0000);
 }
 
 @keyframes hover-link-footer-social {
-  from {bottom: 0px;}
-  to {bottom: 3.5px;}
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 3.5px;
+  }
 }
-
-//Home 
-
 .carousel-caption {
   top: 50%;
   transform: translateY(-50%);
   height: 30%;
-  filter: drop-shadow(0 0 0.30rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.3rem rgb(58, 57, 57));
   border-radius: 100px;
 }
 
@@ -255,19 +245,19 @@ $theme-colors: (
 
 hr {
   height: 4px;
-  border-width:0;
-  color:rgb(0, 0, 0);
-  background-color:rgb(0, 0, 0)
+  border-width: 0;
+  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 .cards-img {
-  filter: drop-shadow(0 0 0.50rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.5rem rgb(58, 57, 57));
 }
 
 .btn-home-rg {
-  background-color: $indigo;
+  background-color: #6610f2;
   color: white;
-  filter: drop-shadow(0 0 0.20rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.2rem rgb(58, 57, 57));
   transition: 1s;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -275,23 +265,22 @@ hr {
 }
 
 .btn-home-rg:hover {
-  background-color: $indigo;
-  filter: drop-shadow(0 0 0.80rem rgb(58, 57, 57));
+  background-color: #6610f2;
+  filter: drop-shadow(0 0 0.8rem rgb(58, 57, 57));
   animation: hover-btn-home-rg 1s;
   animation-fill-mode: forwards;
 }
 
 @keyframes hover-btn-home-rg {
-  from {bottom: 0px;}
-  to {bottom: 5px;}
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 5px;
+  }
 }
-
-// END
-
-// Register
-
 .card-r {
-  filter: drop-shadow(0 0 0.80rem rgb(58, 57, 57));
+  filter: drop-shadow(0 0 0.8rem rgb(58, 57, 57));
 }
 
 .personal-image {
@@ -303,6 +292,7 @@ hr {
   width: 100px;
   height: 100px;
 }
+
 .personal-avatar {
   cursor: pointer;
   width: 100px;
@@ -310,11 +300,13 @@ hr {
   box-sizing: border-box;
   border-radius: 100%;
   border: 2px solid transparent;
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
+
 .personal-avatar:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
+
 .personal-figcaption {
   cursor: pointer;
   position: absolute;
@@ -324,12 +316,14 @@ hr {
   border-radius: 100%;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0);
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
+
 .personal-figcaption:hover {
   opacity: 1;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
 .personal-figcaption > img {
   margin-top: 32.5px;
   width: 30px;
@@ -341,9 +335,9 @@ textarea {
 }
 
 .ng-value {
-  border: $indigo solid 1px;
+  border: #6610f2 solid 1px;
   border-radius: 15px;
-  background-color: $indigo;
+  background-color: #6610f2;
   color: white;
   padding-left: 5px;
   padding-right: 5px;
@@ -354,25 +348,21 @@ textarea {
 
 .ng-value-icon {
   margin-left: 0.06rem;
-  margin-right: 0.10rem;
+  margin-right: 0.1rem;
 }
 
 .ng-placeholder {
   opacity: 0.5;
 }
 
-.ng-select-focused {
-  .ng-placeholder {
-      display: none;
-  }
+.ng-select-focused .ng-placeholder {
+  display: none;
 }
 
-.ng-has-value {
-  .ng-placeholder {
-      display: none;
-  }
+.ng-has-value .ng-placeholder {
+  display: none;
 }
 
 .ng-dropdown-panel {
-  border: solid 1px $indigo !important;
-}
+  border: solid 1px #6610f2 !important;
+}/*# sourceMappingURL=styles.css.map */

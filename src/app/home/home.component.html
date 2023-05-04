@@ -1,7 +1,7 @@
-<body ngClass="py-5 home">
+
 
     <!-- Carousel or Banner -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide my-5" data-bs-ride="carousel">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="../../assets/img/banner-home.png" class="d-block w-100">
@@ -19,7 +19,7 @@
     <!-- Sections -->
 
     <!-- Section 1 -->
-    <div ngClass="container">
+    <div ngClass="container py-5">
         <div ngClass="row">
             <div ngClass="col-6">
                 <img src="../../assets/img/img2-home.jpg" ngClass="img-thumbnail">
@@ -39,7 +39,7 @@
         <div ngClass="row">
             <div ngClass="col-6 text-comfortaa text-center py-5">
                 <h2 ngClass="text-indigo"><strong>{{ 'text-0009' | translate }}</strong></h2>
-                <p ngClass="py-5">{{ 'text-0010' | translate }}r</p>
+                <p ngClass="py-5">{{ 'text-0010' | translate }}</p>
             </div>
             <div ngClass="col-6 px-3">
                 <img src="../../assets/img/img3-home.png" ngClass="img-fluid cards-img">
@@ -56,12 +56,10 @@
             <div ngClass="col-12 text-comfortaa text-center justify-content-centery-5 ">
                 <h2 ngClass="text-indigo"><strong>{{ 'text-0011' | translate }}</strong></h2>
                 <p ngClass="py-5">{{ 'text-0012' | translate }}</p>
-                <div class="d-grid gap-2">
-                    <button ngClass="btn btn-home-rg text-white fs-3">{{ 'text-0013' | translate }}</button>
+                <div class="px-5 py-4">
+                    <button routerLink="/account/register" ngClass="btn btn-home-rg btn-lg text-white px-5 fs-3">{{ 'text-0013' | translate }}</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- END Sections -->
-
-</body>

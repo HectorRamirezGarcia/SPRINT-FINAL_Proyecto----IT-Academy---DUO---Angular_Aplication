@@ -14,11 +14,10 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 //translate page imports
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

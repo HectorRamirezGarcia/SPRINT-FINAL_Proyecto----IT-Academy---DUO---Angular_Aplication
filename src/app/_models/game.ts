@@ -1,5 +1,5 @@
 export class Game {
     id?: string;
-    id_categorie?: string;
+    id_categories?: string;
     name?: string;
 }

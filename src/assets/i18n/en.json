@@ -32,6 +32,62 @@
     "text-0020": "Employment Portal",
     "text-0021": "Technology Blog",
     "text-0022": "Social Networks",
-    "text-0023": "Copyright© 2023 DUO Group"
+    "text-0023": "Copyright© 2023 DUO Group",
+
+    "--- login modal ----": "",
+
+    "text-0024": "Email",
+    "text-0025": "Password",
+    "text-0026": "example",
+    "text-0027": "You not register on DUO? ",
+    "text-0028": "Click her",
+    "text-0029": "or login with your email and password",
+
+    "--- END ---": "",
+
+    "--- _RegisterComponent ---": "",
+
+    "--- placeholder ---": "",
+
+    "text-0030": "Name",
+    "text-0031": "Last Name",
+    "text-0032": "Repeat password",
+    "text-0033": "Phone",
+    "text-0034": "Birthday",
+    "text-0035": "Password",
+    "text-0036": "Repeat password",
+    "text-0037": "Personal information",
+    "text-0038": "Public information",
+    "text-0039": "Send",
+    "text-0040": "Description",
+    "text-0041": "City",
+    "text-0042": "Province",
+    "text-0043": "Username",
+    "text-0044": "Select your game/s",
+
+    "--- Categories ---": "",
+
+    "--- Games ---": "",
+
+    "text-0100": "Shooter",
+    "text-0101": "Action",
+    "text-0102": "RPG",
+    "text-0103": "Moba",
+    "text-0104": "Simulator",
+    "text-0105": "Arcade",
+    "text-0106": "Strategy",
+    "text-0107": "Musical game",
+    "text-0108": "Table game",
+    "text-0109": "Adventure",
+    "text-0110": "Sports"
+
+
+
+
+
+
+
+
+
 
 }

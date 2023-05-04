@@ -1,2 +1,5 @@
 export * from './account.services'
 export * from './apiriotgames.service'
+export * from './alert.service'
+export * from './jquery.services'
+export * from './language.service'

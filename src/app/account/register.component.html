@@ -1,0 +1,126 @@
+<div ngClass="col-12 container-fluid bg-white justify-content-center p-5 border-white rounded-5">
+    <div ngClass="card card-r text-center bg-white border-white rounded-5 p-3">
+        <div ngClass="card-title">
+            <img ngClass="img-small-ia" src="../../assets/img/icons/icon-app-small.png">
+        </div>
+        <div ngClass="card-body col-12">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <div ngClass="container">
+                    <div ngClass="row">
+                        <div ngClass="col-6">
+                            <h3 ngClass="text-indigo text-comfortaa py-4"><strong>{{'text-0037' | translate}}</strong>
+                            </h3>
+                            <div ngClass="input-group mb-3">
+                                <input type="text" formControlName="firstname" placeholder="{{'text-0030' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                    <div *ngIf="f.firstname.errors">First Name is required</div>
+                                </div>
+
+                                <input type="text" formControlName="lastname" placeholder="{{'text-0031' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+                                <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lastname.errors">Last Name is required</div>
+                                </div>
+                            </div>
+                            <div ngClass="input-group mb-3">
+                                <input type="email" formControlName="email" placeholder="{{'text-0024' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors">Email is required</div>
+                                </div>
+                            </div>
+                            <div ngClass="input-group mb-3">
+                                <input type="date" formControlName="birthdate"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.birthdate.errors }" />
+                                <div *ngIf="submitted && f.birthdate.errors" class="invalid-feedback">
+                                    <div *ngIf="f.birthdate.errors">Date is required</div>
+                                </div>
+                            </div>
+                            <div ngClass="input-group mb-3">
+                                <input type="text" formControlName="city" placeholder="{{'text-0041' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                                <div *ngIf="submitted && f.city.errors" class="col-6 invalid-feedback">
+                                    <div *ngIf="f.city.errors">City is required</div>
+                                </div>
+
+                                <input type="text" formControlName="province" placeholder="{{'text-0042' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.province.errors }" />
+                                <div *ngIf="submitted && f.province.errors" class="invalid-feedback">
+                                    <div *ngIf="f.province.errors">Province is required</div>
+                                </div>
+                            </div>
+                            <div ngClass="input-group mb-3">
+                                <input type="password" formControlName="password"
+                                    placeholder="{{'text-0035' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="col-6 invalid-feedback">
+                                    <div *ngIf="f.password.errors">Password is required</div>
+                                </div>
+
+                                <input type="password" formControlName="rpassword"
+                                    placeholder="{{'text-0036' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.rpassword.errors }" />
+                                <div *ngIf="submitted && f.rpassword.errors" class="invalid-feedback">
+                                    <div *ngIf="f.rpassword.errors">Password is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ngClass="col-6">
+                            <h3 ngClass="text-indigo text-comfortaa py-4"><strong>{{'text-0038' | translate}}</strong>
+                            </h3>
+                            <div ngClass="input-group mb-3 justify-content-center">
+                                <label ngClass="label">
+                                    <input type="file" (change)="upload($event)" hidden/>
+                                    <figure class="personal-figure">
+                                        <img src="../../assets/img/icons/icon-change-photo.png"
+                                            class="personal-avatar border border-3 border-indigo" alt="avatar">
+                                        <figcaption class="personal-figcaption">
+                                            <img
+                                                src="https://raw.githubusercontent.com/ThiagoLuizNunes/angular-boilerplate/master/src/assets/imgs/camera-white.png">
+                                        </figcaption>
+                                    </figure>
+                                </label>
+                                <div *ngIf="submitted && f.photourl.errors" class="invalid-feedback">
+                                    <div *ngIf="f.photourl.errors">Error with img selected !</div>
+                                </div>
+                            </div>
+                            <div ngClass="input-group mb-3">
+                                <input type="text" formControlName="username" placeholder="{{'text-0043' | translate}}"
+                                    class="form-control bg-gray-600 text-indigo border-0 mx-2"
+                                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors">Username is required !</div>
+                                </div>
+
+                               <ng-select (change)="changeFn()" placeholder="{{'text-0044' | translate}}" formControlName="games" [items]="games" class="form-control bg-gray-600 text-indigo border-0 mx-2" bindLabel="name" appendTo="body"
+                                    [multiple]="true">
+                                    
+                                </ng-select>
+
+                            </div>
+                            <div ngClass="input-group mb-3">
+                                <textarea class="form-control" formControlName="description" rows="3"
+                                    placeholder="{{'text-0040' | translate}}"></textarea>
+                            </div>
+                        </div>
+                        <div ngClass="input-group mb-3 px-5 py-3">
+                            <button type="submit" (click)="onSubmit()"
+                                ngClass="btn btn-indigo btn-lg form-control bg-indigo text-white  text-comfortaa">{{'text-0039'
+                                | translate}}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

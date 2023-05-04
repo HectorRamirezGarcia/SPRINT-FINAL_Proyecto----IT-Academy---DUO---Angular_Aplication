@@ -1,5 +1,42 @@
-<nav
-  ngClass="navbar fixed-top navbar-expand-lg bg-indigo nav-container-buttons justify-content-center px-5 text-comfortaa">
+<!-- Modal -->
+<div ngClass="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div ngClass="modal-dialog">
+    <div ngClass="modal-content bg-white border border-white rounded-3 p-3">
+      <div ngClass="modal-header border-0">
+        <button type="button" ngClass="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div ngClass="d-flex justify-content-center">
+        <img ngClass="img-small-ia" src="../assets/img/icons/icon-app-small.png">
+      </div>
+      <div ngClass="modal-body border-0">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+          <div ngClass="input-group mb-3">
+            <input type="email" formControlName="email" ngClass="form-control bg-gray-600 text-indigo border-0"
+              placeholder="{{ 'text-0024' | translate }}">
+          </div>
+          <div ngClass="input-group mb-3">
+            <input type="password" formControlName="password" ngClass="form-control bg-gray-600 text-indigo border-0"
+              placeholder="{{ 'text-0025' | translate }}">
+          </div>
+          <div ngClass="col-12 justify-content-center">
+            <p ngClass="text-comfortaa text-over-login">{{ 'text-0027' | translate }}<a
+                ngClass="text-indigo text-decoration-none" routerLink="/account/register" data-bs-dismiss="modal"
+                aria-label="Close">{{'text-0028' | translate}}</a> {{'text-0029' | translate}}</p>
+          </div>
+          <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="First group">
+              <button type="submit" (click)="onSubmit()" ngClass="btn btn-indigo px-4 bg-indigo text-white text-comfortaa"
+                data-bs-dismiss="modal" aria-label="Close"><strong>Login</strong></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav ngClass="navbar navbar-expand-lg bg-indigo nav-container-buttons justify-content-center text-comfortaa">
   <div ngClass="container-fluid">
     <a routerLink="/" ngClass="btn-logo-home navbar-link navbar-brand justify-content-center col-2">
       <img src="../assets/img/icons/icon-app.png" ngClass="img-logo">
@@ -19,29 +56,33 @@
           </a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/forum" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0002' | translate }}</strong></a>
+          <a routerLink="/forum" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0002' | translate
+              }}</strong></a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/information" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0003' | translate }}</strong></a>
+          <a routerLink="/information" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0003' |
+              translate }}</strong></a>
         </li>
         <li class="nav-item px-3">
-          <a routerLink="/security" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0004' | translate }}</strong></a>
+          <a routerLink="/security" ngClass="text-white link-page navbar-link px-2"><strong>{{ 'text-0004' | translate
+              }}</strong></a>
         </li>
       </div>
     </div>
     <div ngClass="container-fluid px-5">
       <div ngClass="row">
-        <select #idiom ngClass="col-5 input-idiom mx-3" (change)="changeIdiom(idiom.value)">
-          <option id="{{i.id}}" *ngFor="let i of idioms" value="{{i.name}}">{{i.text}}</option>
+        <select #idiom ngClass="col-5 input-idiom mx-3" (change)="changeLanguage(idiom.value)">
+          <option id="{{i.id}}" ngClass="border-0" *ngFor="let i of idioms" value="{{i.name}}">{{i.text}}</option>
         </select>
-        <a ngClass="col-2 mx-5 btn btn-user">
+        <a data-bs-toggle="modal" data-bs-target="#exampleModal" ngClass="col-2 mx-5 btn btn-user">
           <img src="../assets/img/icons/user-btnLog.png">
         </a>
       </div>
     </div>
-
   </div>
 </nav>
+<!-- END -->
+
 <!-- main app container -->
 <div class="app-container">
   <router-outlet></router-outlet>
@@ -55,8 +96,11 @@
       <div ngClass="container col-12">
         <h2 ngClass="text-comfortaa text-white py-5 col-6"><strong>{{ 'text-0014' | translate }}</strong></h2>
         <div ngClass="row">
-          <button (click)="prevComments()" ngClass="btn btn-comments col-1" *ngIf="comments.length != 0 && this.startComments != 0"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-          <div ngClass="col-5" *ngFor="let comment of comments | slice:this.startComments:this.startComments+2; let counts = index;">
+          <button (click)="prevComments()" ngClass="btn btn-comments col-1"
+            *ngIf="comments.length != 0 && this.startComments != 0"><span class="carousel-control-prev-icon"
+              aria-hidden="true"></span></button>
+          <div ngClass="col-5"
+            *ngFor="let comment of comments | slice:this.startComments:this.startComments+2; let counts = index;">
             <div class="card">
               <div class="card-body text-comfortaa">
                 <h5 ngClass="py-1"><strong>Antonio</strong></h5>
@@ -64,7 +108,9 @@
               </div>
             </div>
           </div>
-          <button (click)="nextComments()" ngClass="btn btn-comments col-1" *ngIf="comments.length != 0 && this.startComments+2 < comments.length"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          <button (click)="nextComments()" ngClass="btn btn-comments col-1"
+            *ngIf="comments.length != 0 && this.startComments+2 < comments.length"><span
+              class="carousel-control-next-icon" aria-hidden="true"></span></button>
         </div>
       </div>
       <!-- END -->
@@ -95,12 +141,17 @@
       <div ngClass="container col-6">
         <h2 ngClass="text-comfortaa text-white py-5"><strong>{{ 'text-0022' | translate }}</strong></h2>
         <div ngClass="row">
-          <div ngClass="col-1"><a ngClass="link-footer-facebook" href="https://facebook.com"><i class="fa-brands fa-facebook fa-bounce fa-2xl" ></i></a></div>
-          <div ngClass="col-1"><a ngClass="link-footer-twitter" href="https://twitter.com"><i class="fa-brands fa-twitter fa-bounce fa-2xl"></i></a></div>
-          <div ngClass="col-1"><a ngClass="link-footer-instagram" href="https://instagram.com"><i class="fa-brands fa-instagram fa-bounce fa-2xl"></i></a></div>
-          <div ngClass="col-1"><a ngClass="link-footer-tiktok" href="https://tiktok.com"><i class="fa-brands fa-tiktok fa-bounce fa-2xl"></i></a></div>
-          <div ngClass="col-1"><a ngClass="link-footer-youtube" href="https://youtube.com"><i class="fa-brands fa-youtube fa-bounce fa-2xl"></i></a></div>
-        </div> 
+          <div ngClass="col-1"><a ngClass="link-footer-facebook" href="https://facebook.com"><i
+                class="fa-brands fa-facebook fa-bounce fa-2xl"></i></a></div>
+          <div ngClass="col-1"><a ngClass="link-footer-twitter" href="https://twitter.com"><i
+                class="fa-brands fa-twitter fa-bounce fa-2xl"></i></a></div>
+          <div ngClass="col-1"><a ngClass="link-footer-instagram" href="https://instagram.com"><i
+                class="fa-brands fa-instagram fa-bounce fa-2xl"></i></a></div>
+          <div ngClass="col-1"><a ngClass="link-footer-tiktok" href="https://tiktok.com"><i
+                class="fa-brands fa-tiktok fa-bounce fa-2xl"></i></a></div>
+          <div ngClass="col-1"><a ngClass="link-footer-youtube" href="https://youtube.com"><i
+                class="fa-brands fa-youtube fa-bounce fa-2xl"></i></a></div>
+        </div>
       </div>
       <!-- END -->
     </div>
@@ -109,3 +160,4 @@
     <p ngClass="text-center">{{ 'text-0023' | translate }}</p>
   </div>
 </footer>
+<!-- END -->
