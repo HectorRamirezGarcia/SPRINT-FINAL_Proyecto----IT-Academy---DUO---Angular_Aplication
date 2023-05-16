@@ -79,7 +79,19 @@
     "text-0107": "Juego musical",
     "text-0108": "Juego de mesa",
     "text-0109": "Aventuras",
-    "text-0110": "Deportes"
+    "text-0110": "Deportes",
+
+    "--- Settings Modal User ---": "",
+
+    "text-0045": "En linea",
+    "text-0046": "Desconectado",
+    "text-0047": "Ausente",
+    "text-0048": "Estado",
+    "text-0049": "Mostraras a los demas usuarios que estas activo en la pagina.",
+    "text-0050": "No estaras disponible por el momento pero si conectado",
+    "text-0051": "No estas activo o disponible para los demas usuarios",
+    "text-0052": "Guardar",
+    "text-0053": "Cerrar sesión"
 
 
 }

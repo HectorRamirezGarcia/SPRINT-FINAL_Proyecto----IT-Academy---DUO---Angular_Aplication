@@ -11,5 +11,6 @@ export class User {
     photourl?: File | null;
     emailVerified?: boolean;
     userVerified?: boolean;
+    status_id?: string;
     description?: string;
 }

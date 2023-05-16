@@ -12,8 +12,8 @@ export class RegisterComponent implements OnInit {
     submitted = false;
    
     preview!: string;
-
     games!: Array<Game>;
+    file!: any;
 
     form = this.fb.group({
         firstname: ['', Validators.required],
@@ -66,10 +66,17 @@ export class RegisterComponent implements OnInit {
     }
 
     upload(event: any) {
-        console.log(event.target.files[0]);
+        this.file = this.renameFile(event.target.files[0], Date.now()+'-'+ event.target.files[0].name);
         this.form.patchValue({
-            photourl: event.target.files[0].name,
-            file: event.target.files[0]
+            photourl: this.file.name,
+            file: this.file
+        });
+    }
+
+     renameFile(originalFile: File, newName: string) {
+        return new File([originalFile], newName, {
+            type: originalFile.type,
+            lastModified: originalFile.lastModified,
         });
     }
 
@@ -94,7 +101,7 @@ export class RegisterComponent implements OnInit {
         formData.append('file', this.form.value.file!);
         this.accountService.uploadimg(formData).subscribe();
 
-        this.accountService.register(this.form.value)
+        await this.accountService.register(this.form.value)
             .pipe(first())
             .subscribe({
                 next: () => {

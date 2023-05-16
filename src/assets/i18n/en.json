@@ -79,7 +79,30 @@
     "text-0107": "Musical game",
     "text-0108": "Table game",
     "text-0109": "Adventure",
-    "text-0110": "Sports"
+    "text-0110": "Sports",
+
+    "--- Settings Modal User ---": "",
+
+    "text-0045": "Online",
+    "text-0046": "Offline",
+    "text-0047": "Absent",
+    "text-0048": "State",
+    "text-0049": "In this state you show the others that you are active in the page.",
+    "text-0050": "Show the others that you not active in this moment, but you active in the page.",
+    "text-0051": "You not active in the page or not available in this moment.",
+    "text-0052": "Save",
+    "text-0053": "Sign off"
+
+
+
+
+
+
+
+
+
+
+
 
 
 

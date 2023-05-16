@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- Modal Login -->
 <div ngClass="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div ngClass="modal-dialog">
     <div ngClass="modal-content bg-white border border-white rounded-3 p-3">
@@ -9,7 +9,7 @@
         <img ngClass="img-small-ia" src="../assets/img/icons/icon-app-small.png">
       </div>
       <div ngClass="modal-body border-0">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <form [formGroup]="form" (ngSubmit)="loggin()" enctype="multipart/form-data">
           <div ngClass="input-group mb-3">
             <input type="email" formControlName="email" ngClass="form-control bg-gray-600 text-indigo border-0"
               placeholder="{{ 'text-0024' | translate }}">
@@ -25,8 +25,9 @@
           </div>
           <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group" role="group" aria-label="First group">
-              <button type="submit" (click)="onSubmit()" ngClass="btn btn-indigo px-4 bg-indigo text-white text-comfortaa"
-                data-bs-dismiss="modal" aria-label="Close"><strong>Login</strong></button>
+              <button type="submit" (submit)="loggin()"
+                ngClass="btn btn-indigo px-4 bg-indigo text-white text-comfortaa" data-bs-dismiss="modal"
+                aria-label="Close"><strong>Login</strong></button>
             </div>
           </div>
         </form>
@@ -34,6 +35,7 @@
     </div>
   </div>
 </div>
+<!-- END -->
 
 <!-- NAV -->
 <nav ngClass="navbar navbar-expand-lg bg-indigo nav-container-buttons justify-content-center text-comfortaa">
@@ -74,7 +76,12 @@
         <select #idiom ngClass="col-5 input-idiom mx-3" (change)="changeLanguage(idiom.value)">
           <option id="{{i.id}}" ngClass="border-0" *ngFor="let i of idioms" value="{{i.name}}">{{i.text}}</option>
         </select>
-        <a data-bs-toggle="modal" data-bs-target="#exampleModal" ngClass="col-2 mx-5 btn btn-user">
+        <a *ngIf="this.user != null" data-bs-toggle="modal" data-bs-target="#configModal"
+          ngClass="col-2 mx-5 btn btn-user">
+          <img ngClass="img-avatar" src="{{'http://'+this.privatelink+this.photourl}}">
+        </a>
+        <a *ngIf="this.user == null" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          ngClass="col-2 mx-5 btn btn-user">
           <img src="../assets/img/icons/user-btnLog.png">
         </a>
       </div>
@@ -83,8 +90,51 @@
 </nav>
 <!-- END -->
 
-<!-- main app container -->
+<div ngClass="modal fade modal-config" id="configModal" tabindex="-1" aria-labelledby="configModalLabel"
+    aria-hidden="true">
+    <div ngClass="modal-dialog modal-fullscreen-sm-down">
+      <div ngClass="modal-content bg-white border border-white rounded-3 p-3">
+        <div ngClass="modal-header border-0">
+          <button type="button" ngClass="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="form_status" (change)="changeStatus($event.target)" enctype="multipart/form-data">
+          <div ngClass="modal-body border-0">
+            <div ngClass="col-12 justify-content-center">
+              <details ngClass="col-12 custom-select">
+                <summary ngClass="col-12 radios">
+                  <input *ngFor="let state of status" ngClass="text-comfortaa text-white input_status" type="radio" value="{{state.id}}" name="item" id="item{{state.id}}"
+                    title="{{state.name | translate}} {{state.symbol}}" [checked]="state.id === this.status_checked">
+                </summary>
+                <ul class="list">
+                  <li ngClass="li-state" *ngFor="let state of status">
+                    <label ngClass="state-name label-state" for="item{{state.id}}">
+                      <p>{{state.name | translate}} {{state.symbol}}</p><br>
+                      <span></span>
+                    </label>
+                    <label ngClass="state-description">
+                      {{state.description | translate}}
+                      <span></span>
+                    </label>
+                  </li>
+                </ul>
+              </details>
+            </div>
+            <div class="btn-toolbar justify-content-start my-2" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group px-1" role="group" aria-label="Second group">
+                <button type="submit" (click)="logout()"
+                  ngClass="btn btn-indigo px-4 bg-indigo text-white text-comfortaa" data-bs-dismiss="modal"
+                  aria-label="Close"><strong>{{'text-0053' | translate}}</strong></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Settings User -->
 <div class="app-container">
+ 
   <router-outlet></router-outlet>
 </div>
 
